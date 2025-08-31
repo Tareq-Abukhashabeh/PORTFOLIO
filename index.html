@@ -3,307 +3,900 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tareq Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Tareq Abu Khashabeh Profile</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        section {
-            opacity: 0;
-            transition: opacity 0.5s ease-out;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        section.visible {
-            opacity: 1;
-        }
-        @keyframes glitch {
-            0% { text-shadow: 0.05em 0 0 #00ff96, -0.05em -0.025em 0 #00cfff, -0.025em 0.05em 0 #ff00ff; }
-            14% { text-shadow: 0.05em 0 0 #00ff96, -0.05em -0.025em 0 #00cfff, -0.025em 0.05em 0 #ff00ff; }
-            15% { text-shadow: -0.05em -0.025em 0 #00ff96, 0.025em 0.025em 0 #00cfff, -0.05em -0.05em 0 #ff00ff; }
-            49% { text-shadow: -0.05em -0.025em 0 #00ff96, 0.025em 0.025em 0 #00cfff, -0.05em -0.05em 0 #ff00ff; }
-            50% { text-shadow: 0.025em 0.05em 0 #00ff96, 0.05em 0 0 #00cfff, 0 -0.05em 0 #ff00ff; }
-            99% { text-shadow: 0.025em 0.05em 0 #00ff96, 0.05em 0 0 #00cfff, 0 -0.05em 0 #ff00ff; }
-            100% { text-shadow: -0.025em 0 0 #00ff96, -0.025em -0.025em 0 #00cfff, -0.025em -0.05em 0 #ff00ff; }
-        }
-        @keyframes scanline {
-            0% { background-position: 0 0; }
-            100% { background-position: 0 100vh; }
-        }
-        .glitch-text {
-            animation: glitch 2s infinite;
-        }
-        .scanlines {
-            position: relative;
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #1e1e2e 0%, #181825 50%, #11111b 100%);
+            color: #cdd6f4;
+            line-height: 1.6;
             overflow-x: hidden;
         }
-        .scanlines::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(
-                to bottom,
-                transparent 0%,
-                rgba(0, 255, 150, 0.05) 50%,
-                transparent 100%
-            );
-            background-size: 100% 0.5rem;
-            animation: scanline 5s linear infinite;
-            pointer-events: none;
-        }
-        .neon-border {
-            border: 1px solid #00ff96;
-            box-shadow: 0 0 10px #00ff96, inset 0 0 10px #00ff96;
-        }
-        .neon-border:hover {
-            border-color: #00cfff;
-            box-shadow: 0 0 20px #00cfff, inset 0 0 20px #00cfff;
-        }
-        .typewriter {
-            border-right: 0.15em solid #00ff96;
-            animation: blink-caret 0.75s step-end infinite;
-        }
-        @keyframes blink-caret {
-            from, to { border-color: transparent }
-            50% { border-color: #00ff96; }
-        }
-    </style>
-</head>
-<body class="bg-[#080f24] text-white font-mono scanlines overflow-x-hidden">
-    <!-- Header Section -->
-    <header class="min-h-screen flex flex-col justify-center items-center text-center p-8 relative overflow-hidden">
-        <div class="absolute inset-0 bg-[url('https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg')] bg-cover opacity-10"></div>
-        <div class="relative z-10">
-            <h1 class="text-5xl md:text-7xl font-bold mb-4 glitch-text typewriter" id="main-title"></h1>
-            <p class="text-xl md:text-2xl text-cyan-400 mb-8 glitch-text typewriter" id="subtitle"></p>
-            
-            <nav class="flex justify-center space-x-6">
-                <a href="#about" class="text-cyan-400 hover:text-green-400 transition-all duration-300">ABOUT</a>
-                <a href="#skills" class="text-cyan-400 hover:text-green-400 transition-all duration-300">SKILLS</a>
-                <a href="#projects" class="text-cyan-400 hover:text-green-400 transition-all duration-300">PROJECTS</a>
-                <a href="#Writeup" class="text-cyan-400 hover:text-green-400 transition-all duration-300">writeups</a>
-                <a href="#contact" class="text-cyan-400 hover:text-green-400 transition-all duration-300">CONTACT</a>
-                <a href="CV_2025.pdf" class="text-cyan-400 hover:text-green-400 transition-all duration-300">CV</a>
-                
-            </nav>
-        </div>
-    </header>
 
-    <!-- About Section -->
-    <section id="about" class="py-20 px-8 max-w-6xl mx-auto">
-        <h2 class="text-3xl font-bold mb-12 text-center glitch-text">ABOUT ME</h2>
-        <div class="flex flex-col md:flex-row items-center gap-12">
-            <div class="w-full md:w-1/3 flex justify-center">
-                <img src="https://i.pinimg.com/736x/fa/d5/79/fad57999360a5c50bf5276c96c86bdf7.jpg" 
-                     class="w-64 h-64 object-cover rounded-full neon-border p-1">
-            </div>
-            <div class="w-full md:w-2/3">
-                <h3 class="text-2xl font-bold text-cyan-400 mb-4">Tareq Abu Khashabeh</h3>
-                <p class="mb-4">I'm a Cybersecurity Student with a strong passion for network security, ethical hacking, and SOC Analysis. While I'm still gaining experience, I learn fast and constantly push myself to improve my skills.</p>
-                <p class="mb-4">I Have Well knowledge in Network and Security </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="py-20 px-8 bg-black bg-opacity-50">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl font-bold mb-12 text-center glitch-text">TECHNICAL SKILLS</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Skill Card 1 -->
-                <div class="p-6 rounded-lg neon-border hover:bg-black hover:bg-opacity-30 transition-all duration-500">
-                    <div class="text-4xl mb-4 text-green-400"></div>
-                    <h3 class="text-xl font-bold mb-2 text-cyan-400">Languages</h3>
-                    <ul class="list-disc list-inside text-sm">
-                        <li> python Level : Medium</li>
-                        <li>Java script Level : Basic</li>
-                        <li>Bash Script Level : Basic</li>
-                        <li> Html+css Level : Medium</li>
-                        <li>Java Level : Medium</li>
-
-                    </ul>
-                </div>
-                <!-- Skill Card 2 -->
-                <div class="p-6 rounded-lg neon-border hover:bg-black hover:bg-opacity-30 transition-all duration-500">
-                    <div class="text-4xl mb-4 text-green-400"></div>
-                    <h3 class="text-xl font-bold mb-2 text-cyan-400">Compuert Tech </h3>
-                    <ul class="list-disc list-inside text-sm">
-                        <li> Great with Handle issues in computer and fix them (troubleshoot)</li>
-                        <li>Hardware,Software</li>
-                        <li>Level : Pro</li>
-                    </ul>
-                </div>
-                <!-- Skill Card 3 -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="py-20 px-8 max-w-6xl mx-auto">
-        <h2 class="text-3xl font-bold mb-12 text-center glitch-text">PROJECTS</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <!-- Project 1 -->
-            <div class="p-6 rounded-lg neon-border hover:bg-black hover:bg-opacity-30 transition-all duration-500">
-                <h3 class="text-xl font-bold mb-2 text-cyan-400">ScanX</h3>
-                <p class="text-sm mb-4">Network Security Scanner is an advanced Bash-based security scanning tool that allows users to scan networks, detect vulnerabilities, and gather intelligence on web targets.</p>
-                <a href="https://github.com/Tareq-Abukhashabeh/scanX.git" class="text-green-400 hover:text-cyan-400 text-sm">Github Link <i class="fas fa-external-link-alt ml-1"></i></a>
-            </div>
-            <!-- Project 2 -->
-            <div class="p-6 rounded-lg neon-border hover:bg-black hover:bg-opacity-30 transition-all duration-500">
-                <h3 class="text-xl font-bold mb-2 text-cyan-400">Fake Email Detector</h3>
-                <p class="text-sm mb-4">A Chrome extension that detects fake and phishing emails.</p>
-                <a href="https://github.com/Tareq-Abukhashabeh/fake-email-detector.git" class="text-green-400 hover:text-cyan-400 text-sm">Github Link <i class="fas fa-external-link-alt ml-1"></i></a>
-            </div>
-            <!-- Project 3 -->
-            <div class="p-6 rounded-lg neon-border hover:bg-black hover:bg-opacity-30 transition-all duration-500">
-                <h3 class="text-xl font-bold mb-2 text-cyan-400">Notes_Summarizer</h3>
-                <p class="text-sm mb-4">A simple desktop app built with Python, PyQt5, and Hugging Face Transformers to extract and summarize notes from images, PDFs, and text files — powered by AI.</p>
-                <a href="https://github.com/Tareq-Abukhashabeh/Note_summary/blob/main/README.md" class="text-green-400 hover:text-cyan-400 text-sm">Github Link <i class="fas fa-external-link-alt ml-1"></i></a>
-            </div>
-             <!-- Project 4 -->
-            <div class="p-6 rounded-lg neon-border hover:bg-black hover:bg-opacity-30 transition-all duration-500">
-                <h3 class="text-xl font-bold mb-2 text-cyan-400">NarrowAI</h3>
-                <p class="text-sm mb-4">an AI-powered reconnaissance tool designed for ethical hackers, cybersecurity enthusiasts. It automates the process of gathering target information and enriches the results with an AI-powered vulnerability analysis using Google's Gemini model.</p>
-                <a href="https://github.com/Tareq-Abukhashabeh/NarrowAI" class="text-green-400 hover:text-cyan-400 text-sm">Github Link <i class="fas fa-external-link-alt ml-1"></i></a>
-            </div>
-        </div>
-    </section>
-
-        <!-- Writeup Section -->
-        <section id="Writeup" class="py-20 px-8 max-w-6xl mx-auto">
-            <h2 class="text-3xl font-bold mb-12 text-center glitch-text">Writeups</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- writeup 1 -->
-                <div class="p-6 rounded-lg neon-border hover:bg-black hover:bg-opacity-30 transition-all duration-500">
-                    <h3 class="text-xl font-bold mb-2 text-cyan-400">openECSC 2024</h3>
-                    <p class="text-sm mb-4">openECSC is a cybersecurity competition open to everyone that invites enthusiasts to participate without any kind of limitations</p>
-                    <a href="https://medium.com/@tareqkh.ctf/openecsc-2024-ccb7e0ab811b" class="text-green-400 hover:text-cyan-400 text-sm">Read My Writeup <i class="fas fa-external-link-alt ml-1"></i></a>
-                </div>
-                <!-- writeup 2 -->
-                <div class="p-6 rounded-lg neon-border hover:bg-black hover:bg-opacity-30 transition-all duration-500">
-                    <h3 class="text-xl font-bold mb-2 text-cyan-400">wargames.MY 2024</h3>
-                    <p class="text-sm mb-4">wargames.MY is a 24-hour online CTF hacking game. Well, it is a competition of sorts</p>
-                    <a href="https://medium.com/@tareqkh.ctf/wargames-ctf-2024-d85c0342e943" class="text-green-400 hover:text-cyan-400 text-sm">Read My Writeup <i class="fas fa-external-link-alt ml-1"></i></a>
-                </div>
-                <!-- writeup 3 -->
-                 <div class="p-6 rounded-lg neon-border hover:bg-black hover:bg-opacity-30 transition-all duration-500">
-                    <h3 class="text-xl font-bold mb-2 text-cyan-400">CTF@CIT!</h3>
-                    <p class="text-sm mb-4">CTF@CIT! its Amzing Ctf that include all Categories you can Read my writeup here </p>
-                    <a href="https://medium.com/@tareqkh.ctf/crypto-rotten-dfb954ee41c2" class="text-green-400 hover:text-cyan-400 text-sm">Read My Writeup <i class="fas fa-external-link-alt ml-1"></i></a>
-                </div>
-                    <div class="p-6 rounded-lg neon-border hover:bg-black hover:bg-opacity-30 transition-all duration-500">
-                    <h3 class="text-xl font-bold mb-2 text-cyan-400">RedX CTF 2025</h3>
-                    <p class="text-sm mb-4">its my own CTF i have made with my team RedX and this is the official Wrtieup </p>
-                    <a href="https://medium.com/@tareqkh.ctf/redx-ctf-official-writeups-stegano-d14432d21856" class="text-green-400 hover:text-cyan-400 text-sm">Read My Writeup <i class="fas fa-external-link-alt ml-1"></i></a>
-                </div>
-            </div>
-        </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 px-8 bg-black bg-opacity-50">
-        <div class="max-w-2xl mx-auto">
-            <h2 class="text-3xl font-bold mb-12 text-center glitch-text">GET IN TOUCH</h2>
-            <form class="space-y-6">
-                <div>
-                    <label for="name" class="block text-sm font-medium text-cyan-400 mb-1">NAME</label>
-                    <input type="text" id="name" class="w-full bg-[#080f24] border border-cyan-400 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-green-400">
-                </div>
-                <div>
-                    <label for="email" class="block text-sm font-medium text-cyan-400 mb-1">EMAIL</label>
-                    <input type="email" id="email" class="w-full bg-[#080f24] border border-cyan-400 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-green-400">
-                </div>
-                <div>
-                    <label for="message" class="block text-sm font-medium text-cyan-400 mb-1">MESSAGE</label>
-                    <textarea id="message" rows="4" class="w-full bg-[#080f24] border border-cyan-400 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-green-400"></textarea>
-                </div>
-                <button type="submit" class="w-full bg-gradient-to-r from-cyan-400 to-green-400 text-black font-bold py-2 px-4 rounded-md hover:opacity-80 transition-all duration-300">
-                    SEND MESSAGE
-                </button>
-            </form>
-            <div class="flex justify-center space-x-6 mt-12">
-                <a href="https://github.com/Tareq-Abukhashabeh" class="text-2xl text-cyan-400 hover:text-green-400 transition-all duration-300"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/tareq-abu-khashabeh-48a3a4303/" class="text-2xl text-cyan-400 hover:text-green-400 transition-all duration-300"><i class="fab fa-linkedin"></i></a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="py-8 text-center text-sm text-gray-400">
-        <p>© <span id="year"></span> Tareq Abu khashabeh PORTFOLIO. ALL RIGHTS RESERVED.</p>
-    </footer>
-
-    <script>
-        
-        const sections = document.querySelectorAll('section');
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                } else {
-                    entry.target.classList.remove('visible');
-                }
-            });
-        }, {
-            threshold: 0.1
-        });
-
-        sections.forEach(section => {
-            observer.observe(section);
-        });
-        
-        const title = "Welcome to Tareq Abu Kahshabeh Portfolio";
-        let titleIndex = 0;
-        let subtitleIndex = 0;
-        const speed = 50;
-        const pauseDuration = 3000;
-
-        function typeTitle() {
-            if (titleIndex < title.length) {
-                document.getElementById('main-title').textContent += title.charAt(titleIndex);
-                titleIndex++;
-                setTimeout(typeTitle, speed);
-            } else {
-                setTimeout(() => {
-                    document.getElementById('main-title').textContent = '';
-                    titleIndex = 0;
-                    typeTitle();
-                }, pauseDuration);
-            }
-        }
-
-        function typeSubtitle() {
-            if (subtitleIndex < subtitle.length) {
-                document.getElementById('subtitle').textContent += subtitle.charAt(subtitleIndex);
-                subtitleIndex++;
-                setTimeout(typeSubtitle, speed);
-            } else {
-                setTimeout(() => {
-                    document.getElementById('subtitle').textContent = '';
-                    subtitleIndex = 0;
-                    typeSubtitle();
-                }, pauseDuration);
-            }
+        .mono {
+            font-family: 'JetBrains Mono', monospace;
         }
 
        
-        typeTitle();
-        typeSubtitle();
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(17, 17, 27, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(116, 199, 236, 0.2);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #f38ba8;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: #cdd6f4;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: #74c7ec;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #74c7ec;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+       
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 2rem;
+            position: relative;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #cdd6f4 0%, #74c7ec 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-content .subtitle {
+            font-size: 1.5rem;
+            color: #f38ba8;
+            margin-bottom: 2rem;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: #a6adc8;
+            max-width: 600px;
+            margin: 0 auto 3rem;
+        }
+
+       
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin: 0 0.5rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #f38ba8 0%, #eba0ac 100%);
+            color: #11111b;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(243, 139, 168, 0.3);
+        }
+
+        .btn-secondary {
+            border: 2px solid #74c7ec;
+            color: #74c7ec;
+            background: transparent;
+        }
+
+        .btn-secondary:hover {
+            background: #74c7ec;
+            color: #11111b;
+        }
+
+       
+        .section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #74c7ec;
+        }
+
+       
+        .card {
+            background: rgba(30, 30, 46, 0.8);
+            border: 1px solid rgba(116, 199, 236, 0.2);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: rgba(243, 139, 168, 0.5);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+
+       
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+       
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .profile-img {
+            width: 100%;
+            border-radius: 12px;
+            border: 2px solid #74c7ec;
+        }
+
+       
+        .skill-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .skill-header {
+            display: flex;
+            justify-content: between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .skill-name {
+            font-weight: 600;
+        }
+
+        .skill-level {
+            color: #f38ba8;
+            font-size: 0.9rem;
+        }
+
+        .skill-bar {
+            height: 6px;
+            background: rgba(116, 199, 236, 0.2);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(90deg, #74c7ec, #89b4fa);
+            border-radius: 3px;
+            width: 0%;
+            transition: width 2s ease;
+        }
+
         
+        .project-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1rem;
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #cdd6f4;
+        }
+
+        .project-type {
+            background: #f38ba8;
+            color: #11111b;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .project-desc {
+            color: #a6adc8;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-tag {
+            background: rgba(116, 199, 236, 0.2);
+            color: #74c7ec;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+        }
+
+        .project-link {
+            color: #f38ba8;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .project-link:hover {
+            color: #eba0ac;
+        }
+
         
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #74c7ec;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            background: rgba(30, 30, 46, 0.8);
+            border: 1px solid rgba(116, 199, 236, 0.3);
+            border-radius: 8px;
+            color: #cdd6f4;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #f38ba8;
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+       
+        .footer {
+            background: #11111b;
+            border-top: 1px solid rgba(116, 199, 236, 0.2);
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: rgba(30, 30, 46, 0.8);
+            border: 1px solid rgba(116, 199, 236, 0.3);
+            border-radius: 10px;
+            color: #74c7ec;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: #74c7ec;
+            color: #11111b;
+            transform: translateY(-3px);
+        }
+
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .section {
+                padding: 3rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo mono">tareq.sh</div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#writeups" class="nav-link">Writeups</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+   
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Tareq Abu Khashabeh</h1>
+            <div class="subtitle mono">Cybersecurity Enthusiast & SOC Analysis</div>
+            <p>
+                Passionate about network security, ethical hacking, and SOC analysis. 
+                Building tools and skills to protect our digital world.
+            </p>
+            <div>
+                <a href="#projects" class="btn btn-primary">View My Work</a>
+                <a href="CV_2025.pdf" class="btn btn-secondary">Download CV</a>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="about" class="section fade-in">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-grid">
+            <div>
+                <h3 style="color: #f38ba8; font-size: 1.5rem; margin-bottom: 1rem; font-weight: 600;">
+                    Cybersecurity Enthusiast
+                </h3>
+                <p style="margin-bottom: 1.5rem; color: #a6adc8;">
+                    I'm a cybersecurity student with a strong passion for network security, ethical hacking, 
+                    and SOC analysis. While I'm still gaining experience, I learn fast and constantly push 
+                    myself to improve my skills.
+                </p>
+                <p style="margin-bottom: 1.5rem; color: #a6adc8;">
+                    I have solid knowledge in network and security fundamentals, and I enjoy participating 
+                    in CTF competitions to sharpen my practical skills. My goal is to become a skilled 
+                    security professional who can make a real difference in protecting digital infrastructure.
+                </p>
+                <div style="display: flex; gap: 2rem; margin-top: 2rem;">
+                    <div style="text-align: center;">
+                        <div style="font-size: 1.5rem; font-weight: 700; color: #74c7ec;">4+</div>
+                        <div style="color: #a6adc8; font-size: 0.9rem;">Security Projects</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 1.5rem; font-weight: 700; color: #74c7ec;">Multiple</div>
+                        <div style="color: #a6adc8; font-size: 0.9rem;">CTF Competitions</div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <img src="https://i.pinimg.com/736x/fa/d5/79/fad57999360a5c50bf5276c96c86bdf7.jpg" 
+                     alt="Tareq Abu Khashabeh" class="profile-img">
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="skills" class="section fade-in" style="background: rgba(30, 30, 46, 0.3);">
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="grid-3">
+            
+            <div class="card">
+                <div style="display: flex; align-items: center; margin-bottom: 1.5rem;">
+                    <i class="fas fa-code" style="font-size: 1.5rem; color: #f38ba8; margin-right: 0.75rem;"></i>
+                    <h3 style="font-size: 1.25rem; font-weight: 600;">Programming</h3>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">Python</span>
+                        <span class="skill-level mono">Intermediate</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="75"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">Java</span>
+                        <span class="skill-level mono">Intermediate</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="70"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">JavaScript</span>
+                        <span class="skill-level mono">Basic</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="50"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">Bash Script</span>
+                        <span class="skill-level mono">Basic</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="60"></div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="card">
+                <div style="display: flex; align-items: center; margin-bottom: 1.5rem;">
+                    <i class="fas fa-shield-alt" style="font-size: 1.5rem; color: #74c7ec; margin-right: 0.75rem;"></i>
+                    <h3 style="font-size: 1.25rem; font-weight: 600;">Security Skills</h3>
+                </div>
+                <ul style="list-style: none; space-y: 0.75rem;">
+                    <li style="display: flex; align-items: center; margin-bottom: 0.75rem;">
+                        <i class="fas fa-check" style="color: #a6e3a1; margin-right: 0.75rem; font-size: 0.8rem;"></i>
+                        Network Security Analysis
+                    </li>
+                    <li style="display: flex; align-items: center; margin-bottom: 0.75rem;">
+                        <i class="fas fa-check" style="color: #a6e3a1; margin-right: 0.75rem; font-size: 0.8rem;"></i>
+                        SOC Operations
+                    </li>
+                    <li style="display: flex; align-items: center; margin-bottom: 0.75rem;">
+                        <i class="fas fa-check" style="color: #a6e3a1; margin-right: 0.75rem; font-size: 0.8rem;"></i>
+                        Ethical Hacking
+                    </li>
+                    <li style="display: flex; align-items: center; margin-bottom: 0.75rem;">
+                        <i class="fas fa-check" style="color: #a6e3a1; margin-right: 0.75rem; font-size: 0.8rem;"></i>
+                        Vulnerability Assessment
+                    </li>
+                    <li style="display: flex; align-items: center; margin-bottom: 0.75rem;">
+                        <i class="fas fa-check" style="color: #a6e3a1; margin-right: 0.75rem; font-size: 0.8rem;"></i>
+                        CTF Competitions
+                    </li>
+                </ul>
+            </div>
+
+            
+            <div class="card">
+                <div style="display: flex; align-items: center; margin-bottom: 1.5rem;">
+                    <i class="fas fa-tools" style="font-size: 1.5rem; color: #fab387; margin-right: 0.75rem;"></i>
+                    <h3 style="font-size: 1.25rem; font-weight: 600;">Technical</h3>
+                </div>
+                <ul style="list-style: none;">
+                    <li style="display: flex; align-items: center; margin-bottom: 0.75rem;">
+                        <i class="fas fa-check" style="color: #a6e3a1; margin-right: 0.75rem; font-size: 0.8rem;"></i>
+                        Computer Troubleshooting
+                    </li>
+                    <li style="display: flex; align-items: center; margin-bottom: 0.75rem;">
+                        <i class="fas fa-check" style="color: #a6e3a1; margin-right: 0.75rem; font-size: 0.8rem;"></i>
+                        Hardware & Software
+                    </li>
+                    <li style="display: flex; align-items: center; margin-bottom: 0.75rem;">
+                        <i class="fas fa-check" style="color: #a6e3a1; margin-right: 0.75rem; font-size: 0.8rem;"></i>
+                        System Administration
+                    </li>
+                    <li style="display: flex; align-items: center; margin-bottom: 0.75rem;">
+                        <i class="fas fa-check" style="color: #a6e3a1; margin-right: 0.75rem; font-size: 0.8rem;"></i>
+                        Network Configuration
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="projects" class="section fade-in">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="grid-2">
+            
+            <div class="card project-card">
+                <div class="project-header">
+                    <h3 class="project-title mono">ScanX</h3>
+                    <span class="project-type">Security Tool</span>
+                </div>
+                <p class="project-desc">
+                    Advanced network security scanner built with Bash scripting. Performs comprehensive 
+                    vulnerability assessments, port scanning, and intelligence gathering for ethical 
+                    security testing and network hardening.
+                </p>
+                <div class="tech-tags">
+                    <span class="tech-tag">Bash</span>
+                    <span class="tech-tag">Network Security</span>
+                    <span class="tech-tag">Vulnerability Assessment</span>
+                </div>
+                <a href="https://github.com/Tareq-Abukhashabeh/scanX.git" class="project-link">
+                    <i class="fab fa-github"></i> View on GitHub
+                </a>
+            </div>
+
+            
+            <div class="card project-card">
+                <div class="project-header">
+                    <h3 class="project-title mono">Fake Email Detector</h3>
+                    <span class="project-type">Browser Extension</span>
+                </div>
+                <p class="project-desc">
+                    Chrome extension that detects fake and phishing emails using pattern recognition 
+                    and threat intelligence. Provides real-time protection for users against 
+                    email-based security threats.
+                </p>
+                <div class="tech-tags">
+                    <span class="tech-tag">JavaScript</span>
+                    <span class="tech-tag">Chrome Extension</span>
+                    <span class="tech-tag">Phishing Detection</span>
+                </div>
+                <a href="https://github.com/Tareq-Abukhashabeh/fake-email-detector.git" class="project-link">
+                    <i class="fab fa-github"></i> View on GitHub
+                </a>
+            </div>
+
+            
+            <div class="card project-card">
+                <div class="project-header">
+                    <h3 class="project-title mono">Notes Summarizer</h3>
+                    <span class="project-type">AI Application</span>
+                </div>
+                <p class="project-desc">
+                    Desktop application built with Python and PyQt5 that extracts and summarizes 
+                    notes from images, PDFs, and text files using Hugging Face Transformers. 
+                    Streamlines information processing workflows.
+                </p>
+                <div class="tech-tags">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">PyQt5</span>
+                    <span class="tech-tag">AI/ML</span>
+                </div>
+                <a href="https://github.com/Tareq-Abukhashabeh/Note_summary/blob/main/README.md" class="project-link">
+                    <i class="fab fa-github"></i> View on GitHub
+                </a>
+            </div>
+
+            
+            <div class="card project-card">
+                <div class="project-header">
+                    <h3 class="project-title mono">NarrowAI</h3>
+                    <span class="project-type">Security Tool</span>
+                </div>
+                <p class="project-desc">
+                    AI-powered reconnaissance tool for ethical hackers and cybersecurity professionals. 
+                    Automates target information gathering and provides AI-enhanced vulnerability 
+                    analysis using Google's Gemini model.
+                </p>
+                <div class="tech-tags">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">AI Integration</span>
+                    <span class="tech-tag">OSINT</span>
+                </div>
+                <a href="https://github.com/Tareq-Abukhashabeh/NarrowAI" class="project-link">
+                    <i class="fab fa-github"></i> View on GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="writeups" class="section fade-in" style="background: rgba(30, 30, 46, 0.3);">
+        <h2 class="section-title">CTF Writeups</h2>
+        <div class="grid-4">
+
+            <div class="card" style="text-align: center;">
+                <i class="fas fa-flag" style="font-size: 2rem; color: #74c7ec; margin-bottom: 1rem;"></i>
+                <h3 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; color: #cdd6f4;">openECSC 2024</h3>
+                <p style="color: #a6adc8; font-size: 0.9rem; margin-bottom: 1rem;">
+                    European cybersecurity competition open to all enthusiasts
+                </p>
+                <a href="https://medium.com/@tareqkh.ctf/openecsc-2024-ccb7e0ab811b" class="project-link">
+                    Read Writeup →
+                </a>
+            </div>
+
+            <div class="card" style="text-align: center;">
+                <i class="fas fa-crosshairs" style="font-size: 2rem; color: #f38ba8; margin-bottom: 1rem;"></i>
+                <h3 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; color: #cdd6f4;">wargames.MY 2024</h3>
+                <p style="color: #a6adc8; font-size: 0.9rem; margin-bottom: 1rem;">
+                    24-hour online CTF hacking competition
+                </p>
+                <a href="https://medium.com/@tareqkh.ctf/wargames-ctf-2024-d85c0342e943" class="project-link">
+                    Read Writeup →
+                </a>
+            </div>
+
+            <div class="card" style="text-align: center;">
+                <i class="fas fa-lock" style="font-size: 2rem; color: #cba6f7; margin-bottom: 1rem;"></i>
+                <h3 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; color: #cdd6f4;">CTF@CIT</h3>
+                <p style="color: #a6adc8; font-size: 0.9rem; margin-bottom: 1rem;">
+                    Comprehensive CTF covering all security categories
+                </p>
+                <a href="https://medium.com/@tareqkh.ctf/crypto-rotten-dfb954ee41c2" class="project-link">
+                    Read Writeup →
+                </a>
+            </div>
+
+            
+            <div class="card" style="text-align: center;">
+                <i class="fas fa-trophy" style="font-size: 2rem; color: #fab387; margin-bottom: 1rem;"></i>
+                <h3 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; color: #cdd6f4;">RedX CTF 2025</h3>
+                <p style="color: #a6adc8; font-size: 0.9rem; margin-bottom: 1rem;">
+                    Official writeups from our team's CTF competition
+                </p>
+                <a href="https://medium.com/@tareqkh.ctf/redx-ctf-official-writeups-stegano-d14432d21856" class="project-link">
+                    Read Writeup →
+                </a>
+            </div>
+        </div>
+    </section>
+
+    
+            
+
+    <footer class="footer">
+        <div class="social-links">
+            <a href="https://github.com/Tareq-Abukhashabeh" class="social-link">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/tareq-abu-khashabeh-48a3a4303/" class="social-link">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://medium.com/@tareqkh.ctf" class="social-link">
+                <i class="fab fa-medium"></i>
+            </a>
+            <a href="CV_2025.pdf" class="social-link">
+                <i class="fas fa-file-pdf"></i>
+            </a>
+        </div>
+        <p style="color: #6c7086; font-size: 0.9rem;">
+            © <span id="year"></span> Tareq Abu Khashabeh. Built with passion for cybersecurity.
+        </p>
+    </footer>
+
+    <script>
+        // Set current year
         document.getElementById('year').textContent = new Date().getFullYear();
-        
-        
+
+        // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
             });
+        });
+
+        // Intersection Observer for fade-in animations
+        const fadeElements = document.querySelectorAll('.fade-in');
+        const fadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        fadeElements.forEach(element => {
+            fadeObserver.observe(element);
+        });
+
+        // Animate skill bars when skills section is visible
+        const skillsSection = document.getElementById('skills');
+        const skillsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const skillBars = entry.target.querySelectorAll('.skill-progress');
+                    skillBars.forEach((bar, index) => {
+                        setTimeout(() => {
+                            const width = bar.getAttribute('data-width');
+                            bar.style.width = width + '%';
+                        }, index * 200);
+                    });
+                }
+            });
+        }, { threshold: 0.3 });
+
+        skillsObserver.observe(skillsSection);
+
+        // Contact form handling
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const button = this.querySelector('button[type="submit"]');
+            const originalText = button.textContent;
+            
+            // Show loading state
+            button.textContent = 'Sending...';
+            button.disabled = true;
+            button.style.opacity = '0.7';
+            
+            // Simulate form submission
+            setTimeout(() => {
+                button.textContent = 'Message Sent!';
+                button.style.background = 'linear-gradient(135deg, #a6e3a1 0%, #94e2d5 100%)';
+                
+                // Reset form
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.disabled = false;
+                    button.style.opacity = '1';
+                    button.style.background = 'linear-gradient(135deg, #f38ba8 0%, #eba0ac 100%)';
+                    this.reset();
+                }, 2000);
+            }, 1500);
+        });
+
+        // Active navigation highlighting
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        function highlightNavigation() {
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionHeight = section.clientHeight;
+                
+                if (window.pageYOffset >= sectionTop && window.pageYOffset < sectionTop + sectionHeight) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.style.color = '#cdd6f4';
+                if (link.getAttribute('href') === '#' + current) {
+                    link.style.color = '#74c7ec';
+                }
+            });
+        }
+
+        window.addEventListener('scroll', highlightNavigation);
+
+        // Add hover effects to cards
+        const cards = document.querySelectorAll('.card');
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+
+        
+        window.addEventListener('load', () => {
+            
+            const heroContent = document.querySelector('.hero-content');
+            heroContent.style.opacity = '0';
+            heroContent.style.transform = 'translateY(30px)';
+            
+            setTimeout(() => {
+                heroContent.style.transition = 'all 1s ease';
+                heroContent.style.opacity = '1';
+                heroContent.style.transform = 'translateY(0)';
+            }, 100);
+        });
+
+        
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            if (hero && scrolled < window.innerHeight) {
+                hero.style.transform = `translateY(${scrolled * 0.3}px)`;
+                hero.style.opacity = 1 - (scrolled / window.innerHeight);
+            }
         });
     </script>
 </body>
 </html>
-
-
